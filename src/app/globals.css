@@ -13,6 +13,14 @@
   --triple-height: calc(var(--custom-height) * 3);
 }
 
+.big-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 4px;
+  border-color: rgb(13, 3, 66);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
