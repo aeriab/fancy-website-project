@@ -4,8 +4,8 @@ const nextConfig = {
     images: {
       unoptimized: true, // Disable Next.js image optimization (GitHub Pages doesn't support it)
     },
-    // basePath: "/fancy-website-project", // Replace with your actual repository name
-    // assetPrefix: "/fancy-website-project/",
+    // basePath: "/fancy-website-project", // COMMENT OUT IF RUNNING LOCALLY
+    // assetPrefix: "/fancy-website-project/", // BRING BACK IF DEPLOYING TO GITHUB PAGES
   };
   
   module.exports = nextConfig;
