@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "export": "next export",
-    "deploy": "next build && next export && gh-pages -d out",
-    "dev": "next dev --turbopack",
     "build": "next build",
+    "deploy": "next build && gh-pages -d out",
+    "dev": "next dev --turbopack",
     "start": "next start",
     "lint": "next lint"
   },

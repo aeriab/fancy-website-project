@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Head from "next/head";
 import ThreeDScene from "../../components/ThreeDScene";
 
 export default function Home() {
