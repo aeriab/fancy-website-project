@@ -19,3 +19,9 @@ npm run dev
 
 If successful, the project will run at:
 http://localhost:3000
+
+
+To deploy the product using github pages, I use:
+```bash
+npm run deploy
+```
