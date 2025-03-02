@@ -23,5 +23,6 @@ http://localhost:3000
 
 To deploy the product using github pages, I use:
 ```bash
+npm run build
 npm run deploy
 ```
