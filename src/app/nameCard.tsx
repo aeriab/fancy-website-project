@@ -67,54 +67,20 @@ const NameCard = () => {
         }}
         className="width-full height-full position-absolute top-0 left-0"
         >
+            {/* <div style={{transform: "translateZ(12vh)",transformStyle: "preserve-3d",}}className="big-style rounded-xl bg-red shadow-lg">
+                ㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+            </div> */}
             <div style={{transform: "translateZ(10vh)",transformStyle: "preserve-3d",}}className="big-style rounded-xl bg-white shadow-lg">
-                <div className="width-full height-full position-absolute top-0 left-0 text-black lexend text-[100px]">Brendan Aeria</div>
+                <div style={{
+                        transform: "translateZ(75px)",
+                    }}
+                    className="mx-auto text-4xl">
+                <div style={{transform: "translateZ(5vh)",}} className="width-full height-full position-absolute top-0 left-0 text-black lexend text-[10vh]">Brendan Aeria</div>
+                </div>
             </div>
             
         </motion.div>
     );
 };
 
-
-// const NameCard = () => {
-//     const ref = useRef<HTMLDivElement | null>(null);
-//     const x = useMotionValue(0);
-//     const y = useMotionValue(0);
-//     const xSpring = useSpring(x);
-//     const ySpring = useSpring(y);
-//     const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
-  
-//     const handleMouseMove = (e: MouseEvent) => {
-//       if (!ref.current) return [0, 0];
-//       const rect = ref.current.getBoundingClientRect();
-//       const width = rect.width;
-//       const height = rect.height;
-//       const mouseX = (e.clientX - rect.left) * ROTATION_RANGE;
-//       const mouseY = (e.clientY - rect.top) * ROTATION_RANGE;
-//       const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
-//       const rY = mouseX / width - HALF_ROTATION_RANGE;
-//       x.set(rX);
-//       y.set(rY);
-//     };
-  
-//     const handleMouseLeave = () => {
-//       x.set(0);
-//       y.set(0);
-//     };
-  
-//     return (
-//       <motion.div
-//         ref={ref}
-//         onMouseLeave={handleMouseLeave}
-//         style={{
-//             transformStyle: "preserve-3d",
-//             transform,
-//         }}
-//         className="width-full height-full position-absolute top-0 left-0"
-//       >
-//         <div className="width-full height-full position-absolute top-0 left-0 text-white lexend text-[100px]">Brendan Aeria</div>
-//       </motion.div>
-//     );
-//   };
-
-  export default NameCard;
+export default NameCard;
