@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
       <div className="bg-black">
         <div className="p-[1vh] grid grid-cols-[1fr_minmax(200px,_2fr)_1fr] content-normal gap-[0vh] h-[99vh] ...">
-          <div className="big-style h-[var(--custom-top-height)]"><ReloadButton /></div>
+          <div className="big-style h-[var(--custom-top-height)]"><ProjectButton /></div>
           <div className="big-style h-[var(--custom-top-height)] text-white lexend text-[100px]"><NameCard /></div>
           <div className="big-style h-[var(--custom-top-height)]">03</div>
           <div className="big-style h-[var(--custom-middle-height)]">04</div>
