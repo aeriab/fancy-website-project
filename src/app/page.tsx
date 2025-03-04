@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import ThreeDScene from "../../components/ThreeDScene";
 import NameCard from './nameCard';
+import Button from './Button';
 import Head from 'next/head';
 import { useAnimation, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 
@@ -17,8 +18,7 @@ export default function Home() {
       </Head>
       <div className="bg-black">
         <div className="p-[1vh] grid grid-cols-[1fr_minmax(200px,_2fr)_1fr] content-normal gap-[0vh] h-[99vh] ...">
-          <div className="big-style h-[var(--custom-top-height)]">01</div>
-          {/* <div className="big-style h-[var(--custom-height)] text-white font-lexend text-xl font-bold">Brendan Aeria</div> */}
+          <div className="big-style h-[var(--custom-top-height)]"><Button /></div>
           <div className="big-style h-[var(--custom-top-height)] text-white lexend text-[100px]"><NameCard /></div>
           <div className="big-style h-[var(--custom-top-height)]">03</div>
           <div className="big-style h-[var(--custom-middle-height)]">04</div>
