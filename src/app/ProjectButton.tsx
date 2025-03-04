@@ -17,16 +17,19 @@ const ButtonWrapper = () => {
 
 
 
-const TRANSLATE_RANGE = 6.0;
+const TRANSLATE_RANGE = 60.0;
 
 const NeumorphismButton = () => {
 
   const ref = useRef<HTMLDivElement | null>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const theta = useMotionValue(0);
   const xSpring = useSpring(x, { stiffness: 300, damping: 30 });
   const ySpring = useSpring(y, { stiffness: 300, damping: 30 });
+  const rotationDegree = useSpring(theta, { stiffness: 300, damping: 30});
   const transform = useMotionTemplate`translateX(${xSpring}px) translateY(${ySpring}px)`;
+  const rot_transform = useMotionTemplate`rotateZ(${rotationDegree}deg)`;
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
@@ -45,6 +48,7 @@ const NeumorphismButton = () => {
 
     x.set(tX);
     y.set(tY);
+    theta.set(Math.sin(tX) * 30.0)
   };
 
   const handleMouseLeave = () => {
@@ -62,9 +66,9 @@ const NeumorphismButton = () => {
         transform,
       }} className="border-2 border-red-600 w-full h-full"
     >
-      <div className="border-2 border-red-400 w-full h-full">
-        <button onClick={() => window.location.reload()} className="w-[50%] h-[50%]">
-          <img src="/official_profile_picture.svg" alt="Globe Logo" className="w-[100%] h-[100%]" />
+      <div className="border-2 border-red-400 w-full h-full flex items-center justify-center">
+        <button onClick={() => window.location.reload()} className="border-2 border-red-300 w-[30%] h-[30%] flex items-center justify-center">
+          <img src="/official_profile_picture.svg" alt="Globe Logo" className="border-2 border-red-200" />
         </button>
       </div>
       
