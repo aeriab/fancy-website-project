@@ -23,13 +23,14 @@ export default function Home() {
           <div className="big-style h-[var(--custom-top-height)] text-white lexend text-[100px]"><NameCard /></div>
           <div className="big-style h-[var(--custom-top-height)]">03</div>
           <div className="big-style h-[var(--custom-middle-height)]">04</div>
-          <div id="threeDContainer" className="relative big-style h-[var(--custom-middle-height)]">
+          {/* <div id="threeDContainer" className="relative big-style h-[var(--custom-middle-height)]"> */}
+          <div className="big-style h-[var(--custom-middle-height)]">
             {/* <ThreeDScene /> */}
             <ProjectButton />
 
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black text-4xl font-bold font-lexend">
+            {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black text-4xl font-bold font-lexend">
               Projects
-            </div>
+            </div> */}
           </div>
           <div className="big-style h-[var(--custom-middle-height)]">06</div>
           <div className="big-style h-[var(--custom-bottom-height)]">07</div>
