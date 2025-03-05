@@ -14,6 +14,7 @@ cd fancy-website-project    # If not already at project directory
 npm install next@latest react@latest react-dom@latest
 npm install three
 npm install react-icons
+npm install @react-three/fiber three
 ```
 
 To run the development server:

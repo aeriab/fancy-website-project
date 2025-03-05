@@ -20,7 +20,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div id="threeDContainer" className="w-full h-full">
+      <div id="threeDContainer" className="absolute top-0 left-0 w-full h-full">
         <ThreeDScene />
       </div>
       <div className="absolute top-0 left-0 w-full h-full z-10">
