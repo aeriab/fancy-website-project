@@ -37,8 +37,8 @@ const NameCard = () => {
 
         // Map mouse coordinates to rotation range
         // const rX = Math.max(Math.min((mouseY / height - 0.5) * -2 * ROTATION_RANGE * 0.5,1),-1);
-        const rX = (mouseY / height - 0.5) * -2 * ROTATION_RANGE * 0.5;
-        const rY = Math.max(Math.min((mouseX / width - 0.5) * 2 * ROTATION_RANGE * 1.8,30),-30);
+        const rX = Math.max(Math.min((mouseY / height - 0.5) * -2 * ROTATION_RANGE * 0.5,45),-45);
+        const rY = Math.max(Math.min((mouseX / width - 0.5) * 2 * ROTATION_RANGE * 1.8,45),-45);
 
         x.set(rX);  // Set motion values
         y.set(rY);
@@ -68,18 +68,14 @@ const NameCard = () => {
         }}
         className="width-full height-full position-absolute top-0 left-0"
         >
-            {/* <div style={{transform: "translateZ(12vh)",transformStyle: "preserve-3d",}}className="big-style rounded-xl bg-red shadow-lg">
-                ㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-            </div> */}
             <div style={{transform: "translateZ(10vh)",transformStyle: "preserve-3d",}}className="big-style rounded-xl bg-[#88d6fa] shadow-lg">
                 <div style={{
                         transform: "translateZ(3vh)",
                     }}
-                    className="mx-auto text-4xl bg-[#d4f0fc] rounded-xl shadow-lg">
+                    className="mx-auto text-4xl bg-[#d4f0fc] rounded-xl shadow-lg h-[80%]">
                     <p className="width-full height-full position-absolute top-0 left-0 text-[#01313f] lexend text-[10vh] text-center">Brendan Aeria</p>
                 </div>
             </div>
-            
         </motion.div>
     );
 };

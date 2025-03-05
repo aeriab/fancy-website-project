@@ -16,17 +16,17 @@ import { deltaTime } from 'three/tsl';
 
 export function createDots(numDots: number, boxSize: number, dotSize: number): THREE.Group {
   const group = new THREE.Group();
-  const geometry = new THREE.SphereGeometry(dotSize, 8, 8);
   const material = new THREE.MeshBasicMaterial({ color: 0x0e3c64 });
 
   for (let i = 0; i < numDots; i++) {
+      const geometry = new THREE.SphereGeometry(dotSize * (Math.random() + 0.5), 16, 16)
       const dot = new THREE.Mesh(geometry, material);
 
       // Random position within the box
       dot.position.set(
           (Math.random() - 0.5) * boxSize,
           (Math.random() - 0.5) * boxSize,
-          (Math.random() - 0.5) * boxSize
+          (Math.random() - 0.1) * boxSize * 0.5
       );
 
       group.add(dot);
@@ -38,11 +38,11 @@ export function createDots(numDots: number, boxSize: number, dotSize: number): T
 const ThreeDScene: React.FC = () => {
 
   const mouseRef = useRef({ x: 0, y: 0 });
-  
-  const dotsArray = useRef<THREE.Group[]>([]);
-
 
   useEffect(() => {
+    
+    const BOX_SIZE = 10;
+
     // Get the target div by ID
     const container = document.getElementById('threeDContainer');
     if (!container) return;
@@ -73,18 +73,8 @@ const ThreeDScene: React.FC = () => {
 
     geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 
-    for (let row = 0; row < 3; row++) {
-      for (let col = 0; col < 3; col++) {
-        const dots = createDots(200, 10, 0.04);
-        dots.position.set(
-          (col - 1) * 10, // X position
-          (row - 1) * 10, // Y position
-          0 // Keep in the same Z-plane
-        );
-        scene.add(dots);
-        dotsArray.current.push(dots); // ✅ Store dots in the array
-      }
-    }
+    const dots = createDots(800,BOX_SIZE * 2, 0.03);
+    scene.add(dots);
 
     // Set initial camera position
     camera.position.z = 5;
@@ -112,15 +102,21 @@ const ThreeDScene: React.FC = () => {
 
       timeVal = clock.getElapsedTime();
       
-      dotsArray.current.forEach((dotsGroup, groupIndex) => {
-        dotsGroup.position.x += movingRightVal * 0.1;
-        dotsGroup.position.y += movingUpVal * 0.1;
+      dots.children.forEach((dot) => {
+        dot.position.x += movingRightVal * 0.05;
+        dot.position.y += movingUpVal * 0.05;
 
-        // if (dotsGroup.position.x > 0) {
-        //   dotsGroup.position.x -= -100;
-        // } else if (dotsGroup.position.x < -100) {
-        //   dotsGroup.position.x += 100;
-        // }
+        if (dot.position.x > BOX_SIZE) {
+          dot.position.x -= 2 * BOX_SIZE;
+        } else if (dot.position.x < -BOX_SIZE) {
+          dot.position.x += 2 * BOX_SIZE;
+        }
+
+        if (dot.position.y > BOX_SIZE) {
+          dot.position.y -= 2 * BOX_SIZE;
+        } else if (dot.position.y < -BOX_SIZE) {
+          dot.position.y += 2 * BOX_SIZE;
+        }
       });
       // dots.position.z = (Math.cos(0.05 * timeVal) * 1.3)
 
@@ -133,24 +129,27 @@ const ThreeDScene: React.FC = () => {
 
       renderer.render(scene, camera);
 
-      if (movingRightVal > 0.0) {
-        movingRightVal -= (movingRightVal + 0.1) * 40.0 * clock.getDelta();
-      } else if (movingRightVal < 0.0) {
-        movingRightVal += -(movingRightVal - 0.1) * 40.0 * clock.getDelta();
+      // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD    BACK IN !!!!!!!!!!!
+
+      // movingRightVal *= 0.95;
+      // movingUpVal *= 0.95;
+
+      if (movingRightVal > 0.06 || movingRightVal < -0.06) {
+        movingRightVal *= 0.95;
+      }
+      if (movingUpVal > 0.06 || movingUpVal < -0.06) {
+        movingUpVal *= 0.95;
       }
 
-      if (movingUpVal > 0.0) {
-        movingUpVal -= (movingUpVal + 0.1) * 40.0 * clock.getDelta();
-      } else if (movingUpVal < 0.0) {
-        movingUpVal += -(movingUpVal - 0.1) * 40.0 * clock.getDelta();
-      }
-      if (Math.abs(movingUpVal) < 0.001) {
-        movingUpVal = 0;
-      }
+      // if (movingUpVal > 0.02) {
+      //   movingUpVal = movingUpVal * (1.0 - Math.min(0.99,(5.0 * clock.getDelta())));
+      // } else if (movingUpVal < -0.02) {
+      //   movingUpVal = movingUpVal * (1.0 - Math.min(0.99,(5.0 * clock.getDelta())));
+      // }
 
-      // console.log("movingUpVal: " + String(movingUpVal));
+      console.log("movingUpVal: " + String(movingUpVal));
       
-      console.log("movingRightVal: " + String(movingRightVal));
+      // console.log("movingRightVal: " + String(movingRightVal));
     }
 
     animate();
