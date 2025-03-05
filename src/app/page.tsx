@@ -3,6 +3,9 @@ import ThreeDScene from "../../components/ThreeDScene";
 import NameCard from './nameCard';
 import ReloadButton from './ReloadButton';
 import ProjectButton from './ProjectButton';
+import AboutButton from './AboutButton';
+import BlogButton from './BlogButton';
+import GamesButton from './GamesButton';
 import Head from 'next/head';
 import { useAnimation, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 
@@ -17,12 +20,15 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div className="bg-black">
-        <div className="p-[1vh] grid grid-cols-[1fr_minmax(200px,_2fr)_1fr] content-normal gap-[0vh] h-[99vh] ...">
-          <div className="big-style h-[var(--custom-top-height)]"><ProjectButton /></div>
+      <div id="threeDContainer" className="w-full h-full">
+        <ThreeDScene />
+      </div>
+      <div className="absolute top-0 left-0 w-full h-full z-10">
+        <div className="p-[3vh] grid grid-cols-[1fr_minmax(200px,_2fr)_1fr] content-normal gap-[0vh] h-[99vh] ...">
+          <div className="big-style h-[var(--custom-top-height)]"><ReloadButton /></div>
           <div className="big-style h-[var(--custom-top-height)] text-white lexend text-[100px]"><NameCard /></div>
-          <div className="big-style h-[var(--custom-top-height)]">03</div>
-          <div className="big-style h-[var(--custom-middle-height)]">04</div>
+          <div className="big-style h-[var(--custom-top-height)]"><AboutButton /></div>
+          <div className="big-style h-[var(--custom-middle-height)]"><GamesButton /></div>
           {/* <div id="threeDContainer" className="relative big-style h-[var(--custom-middle-height)]"> */}
           <div className="big-style h-[var(--custom-middle-height)]">
             {/* <ThreeDScene /> */}
@@ -32,10 +38,10 @@ export default function Home() {
               Projects
             </div> */}
           </div>
-          <div className="big-style h-[var(--custom-middle-height)]">06</div>
-          <div className="big-style h-[var(--custom-bottom-height)]">07</div>
+          <div className="big-style h-[var(--custom-middle-height)]"><BlogButton /></div>
+          {/* <div className="big-style h-[var(--custom-bottom-height)]">07</div>
           <div className="big-style h-[var(--custom-bottom-height)]">08</div>
-          <div className="big-style h-[var(--custom-bottom-height)]">09</div>
+          <div className="big-style h-[var(--custom-bottom-height)]">09</div> */}
         </div>
       </div>
     </>

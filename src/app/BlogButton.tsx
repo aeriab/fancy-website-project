@@ -67,7 +67,7 @@ const NeumorphismButton = () => {
     >
       <div className="w-full h-full flex items-center justify-center">
         <button onClick={() => window.location.reload()} 
-          className="flex flex-col items-center justify-center h-[min(35vw,35vh)] w-[min(35vw,35vh)]"
+          className="flex flex-col items-center justify-center h-[min(20vw,20vh)] w-[min(20vw,20vh)]"
         >
           <motion.div
             ref={ref}
@@ -78,7 +78,7 @@ const NeumorphismButton = () => {
           >
             <img src="/official_profile_picture.svg" alt="Globe Logo" className="w-full h-full"/>
           </motion.div>
-          <p className="text-xl absolute z-10 text-[#ffffff] lexend">PROJECTS</p>
+          <p className="text-xl absolute z-10 text-[#ffffff] lexend">TECH BLOG</p>
         </button>
       </div>
       
