@@ -11,7 +11,6 @@ import {
 
 
 const ROTATION_RANGE = 6.0;
-const HALF_ROTATION_RANGE = 6.0 / 2.0;
 
 
 

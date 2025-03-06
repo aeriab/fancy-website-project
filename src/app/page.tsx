@@ -1,5 +1,4 @@
 "use client";
-import type { AppProps } from 'next/app';
 import ThreeDScene from "../../components/ThreeDScene";
 import NameCard from './nameCard';
 import ReloadButton from './ReloadButton';
@@ -8,7 +7,6 @@ import AboutButton from './AboutButton';
 import BlogButton from './BlogButton';
 import GamesButton from './GamesButton';
 import Head from 'next/head';
-import { useAnimation, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 
 export default function Home() {
   return (

@@ -41,4 +41,7 @@ npm run build
 npm run deploy
 ```
 
+possibly:
+npm run export
+
 testing change

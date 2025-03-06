@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import {
   motion,
   useMotionTemplate,
@@ -28,7 +28,6 @@ const NeumorphismButton = () => {
   const xSpring = useSpring(x, { stiffness: 300, damping: 30 });
   const ySpring = useSpring(y, { stiffness: 300, damping: 30 });
   const rotationDegree = useSpring(theta, { stiffness: 10, damping: 15});
-  const transform = useMotionTemplate`translateX(${xSpring}px) translateY(${ySpring}px) rotateZ(${rotationDegree}deg)`;
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;

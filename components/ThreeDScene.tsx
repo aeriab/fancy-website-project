@@ -2,14 +2,10 @@
 
 // components/ThreeDScene.tsx
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { ImprovedNoise } from 'three/addons/math/ImprovedNoise.js';
 
 import React from 'react';
-import { rgbShift } from 'three/examples/jsm/tsl/display/RGBShiftNode.js';
-import { deltaTime } from 'three/tsl';
 
 
 
@@ -86,10 +82,6 @@ const ThreeDScene: React.FC = () => {
 
     window.addEventListener('mousemove', onMouseMove);
 
-
-
-    const clock = new THREE.Clock();
-    let timeVal = 0.0;
     let movingRightVal = 0.0;
     let movingUpVal = 0.0;
 
@@ -98,8 +90,6 @@ const ThreeDScene: React.FC = () => {
     // Animation loop
     function animate() {
       requestAnimationFrame(animate);
-
-      timeVal = clock.getElapsedTime();
       
       dots.children.forEach((dot) => {
         dot.position.x += movingRightVal * 0.05;
