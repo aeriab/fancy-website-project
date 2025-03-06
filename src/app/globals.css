@@ -24,6 +24,10 @@
   overflow: visible;
 }
 
+.default-text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .lexend {
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;

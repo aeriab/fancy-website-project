@@ -78,7 +78,27 @@ const NeumorphismButton = () => {
           >
             <img src="/official_profile_picture.svg" alt="Globe Logo" className="w-full h-full"/>
           </motion.div>
-          <p className="text-[6vh] absolute z-10 text-[#ffffff] [text-shadow:4px_4px_10px_rgba(0,0,0,0.5)] lexend">PROJECTS</p>
+
+          <motion.p
+            className="absolute z-10 text-[6vh] text-[#2f00ff] font-bold lexend"
+            style={{
+              zIndex: 0, // Behind the original text
+              filter: 'blur(10px)', // Optional, for a shadow-like effect
+            }}
+          >
+            PROJECTS
+          </motion.p>
+
+          {/* Original Text */}
+          <motion.p 
+            className="text-[6vh] absolute z-10 text-[#ffffff] lexend"
+            style={{
+              zIndex: 1, // Behind the original text
+            }}
+          >
+            PROJECTS
+          </motion.p>
+
         </button>
       </div>
       
