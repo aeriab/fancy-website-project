@@ -101,7 +101,7 @@ const NeumorphismButton = () => {
 
           {/* Original Text */}
           <motion.p 
-            className="text-[5vh] absolute z-10 text-[#ffffff] lexend"
+            className="text-[5vh] absolute z-10 text-[#ffffff]"
             style={{
               zIndex: 1, // Behind the original text
             }}
