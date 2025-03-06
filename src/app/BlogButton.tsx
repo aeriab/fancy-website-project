@@ -79,7 +79,7 @@ const NeumorphismButton = () => {
             <Image 
               unoptimized
               
-              src="https://aeriab.github.io/fancy-website-project/official_profile_picture.svg"
+              src="https://aeriab.github.io/official_profile_picture.svg"
               // src="/official_profile_picture.SVG" 
               alt="Protein Logo" 
               className="w-full h-full"
