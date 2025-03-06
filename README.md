@@ -2,7 +2,7 @@
 Hello, this is me playing around with framer-motion, tailwindcss, and next.js
 
 
-You may be able to access this prototype from: https://aeriab.github.io/fancy-website-project/
+You may be able to access this prototype from: https://aeriab.github.io/
 
 
 ## Getting Started For Developers
