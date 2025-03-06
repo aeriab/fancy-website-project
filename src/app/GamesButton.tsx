@@ -66,7 +66,7 @@ const NeumorphismButton = () => {
       }} className="w-full h-full"
     >
       <div className="w-full h-full flex items-center justify-center">
-        <button onClick={() => window.location.reload()} 
+        <button onClick={() => window.location.href = 'https://aeriab.github.io/games/'} 
           className="flex flex-col items-center justify-center h-[min(25vw,25vh)] w-[min(25vw,25vh)]"
         >
           <motion.div

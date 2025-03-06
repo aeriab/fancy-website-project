@@ -8,7 +8,6 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { ImprovedNoise } from 'three/addons/math/ImprovedNoise.js';
 
 import React from 'react';
-import { Canvas } from '@react-three/fiber';
 import { rgbShift } from 'three/examples/jsm/tsl/display/RGBShiftNode.js';
 import { deltaTime } from 'three/tsl';
 
@@ -120,10 +119,11 @@ const ThreeDScene: React.FC = () => {
       });
       // dots.position.z = (Math.cos(0.05 * timeVal) * 1.3)
 
-      movingRightVal += mouseRef.current.x - previousXPos;
+      const SPEED_MAX = 0.08;
+      movingRightVal += Math.max(-SPEED_MAX, Math.min(mouseRef.current.x - previousXPos, SPEED_MAX));
       previousXPos = mouseRef.current.x;
 
-      movingUpVal += mouseRef.current.y - previousYPos;
+      movingUpVal += Math.max(-SPEED_MAX, Math.min(mouseRef.current.y - previousYPos, SPEED_MAX));
       previousYPos = mouseRef.current.y;
 
 
