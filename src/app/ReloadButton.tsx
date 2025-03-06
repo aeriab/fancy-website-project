@@ -63,17 +63,22 @@ const NeumorphismButton = () => {
       style={{
         transformStyle: "preserve-3d",
         transform: useMotionTemplate`translateX(${xSpring}px) translateY(${ySpring}px)`,
+        willChange: "transform",
       }} className="w-full h-full"
     >
       <div className="w-full h-full flex items-center justify-center">
-        <button onClick={() => window.location.reload()} 
+        <motion.button 
+          whileHover={{ scale: 1.4 }}
+          whileTap={{ scale: 0.95 }} // Slightly shrinks when clicked
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          onClick={() => window.location.reload()} 
           className="flex flex-col items-center justify-center h-[min(17vw,17vh)] w-[min(17vw,17vh)]"
         >
           <motion.div
             ref={ref}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            style={{ transformStyle: "preserve-3d", transformOrigin: "center", transform: useMotionTemplate`rotateZ(${rotationDegree}deg)` }}
+            style={{ transformStyle: "preserve-3d", transformOrigin: "center", willChange: "transform", transform: useMotionTemplate`rotateZ(${rotationDegree}deg)` }}
             className="w-full h-full"
           >
             <Image 
@@ -101,18 +106,18 @@ const NeumorphismButton = () => {
 
           {/* Original Text */}
           <motion.p 
-            className="text-[3vh] absolute z-10 text-[#ffffff] font-helvetica"
+            className="text-[3vh] absolute z-10 text-[#ffffff] font-bold lexend"
             style={{
               zIndex: 1, // Behind the original text
             }}
           >
-            HOME HELVETICA
+            HOME
           </motion.p>
 
 
 
           {/* <p className="text-xl absolute z-10 text-[#ffffff] lexend">HOME</p> */}
-        </button>
+        </motion.button>
       </div>
       
     </motion.div>

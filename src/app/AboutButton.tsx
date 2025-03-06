@@ -70,17 +70,22 @@ const NeumorphismButton = () => {
       style={{
         transformStyle: "preserve-3d",
         transform: useMotionTemplate`translateX(${xSpring}px) translateY(${ySpring}px)`,
+        willChange: "transform",
       }} className="w-full h-full"
     >
       <div className="w-full h-full flex items-center justify-center">
-        <button onClick={() => window.location.href = 'https://aeriab.github.io/about/'} 
+        <motion.button 
+          whileHover={{ scale: 1.4 }}
+          whileTap={{ scale: 0.95 }} // Slightly shrinks when clicked
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          onClick={() => window.location.href = 'https://aeriab.github.io/about/'} 
           className="flex flex-col items-center justify-center h-[min(17vw,17vh)] w-[min(17vw,17vh)]"
         >
           <motion.div
             ref={ref}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            style={{ transformStyle: "preserve-3d", transformOrigin: "center", transform: useMotionTemplate`rotateZ(${rotationDegree}deg)` }}
+            style={{ transformStyle: "preserve-3d", transformOrigin: "center", willChange: "transform", transform: useMotionTemplate`rotateZ(${rotationDegree}deg)` }}
             className="w-full h-full"
           >
             <Image 
@@ -116,7 +121,7 @@ const NeumorphismButton = () => {
 
 
           {/* <p className="text-xl absolute z-10 text-[#ffffff] lexend">ABOUT</p> */}
-        </button>
+        </motion.button>
       </div>
       
     </motion.div>
