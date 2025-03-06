@@ -78,7 +78,7 @@ const NeumorphismButton = () => {
           >
             <Image 
               unoptimized
-              src="/official_profile_picture.SVG" 
+              src="/public/official_profile_picture.SVG" 
               alt="Protein Logo" 
               className="w-full h-full"
               width={10} // Specify the width of the image (or use a value based on your layout)
