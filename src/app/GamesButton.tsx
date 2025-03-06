@@ -6,6 +6,7 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
+import Image from 'next/image';
 
 const ButtonWrapper = () => {
   return (
@@ -75,7 +76,14 @@ const NeumorphismButton = () => {
             style={{ transformStyle: "preserve-3d", transformOrigin: "center", transform: useMotionTemplate`rotateZ(${rotationDegree}deg)` }}
             className="w-full h-full"
           >
-            <img src="/official_profile_picture.svg" alt="Globe Logo" className="w-full h-full"/>
+            <Image 
+              src="/official_profile_picture.svg" 
+              alt="Protein Logo" 
+              className="w-full h-full"
+              width={10} // Specify the width of the image (or use a value based on your layout)
+              height={10} // Specify the height of the image (or use a value based on your layout)
+            />
+            {/* <img src="/official_profile_picture.svg" alt="Globe Logo" className="w-full h-full"/> */}
           </motion.div>
 
           <motion.p

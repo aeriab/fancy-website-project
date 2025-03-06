@@ -17,6 +17,8 @@ npm install react-icons
 npm install @react-three/fiber three
 npm install tailwindcss-textshadow
 npm install gh-pages --save-dev
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
 ```
 
 To run the development server:
