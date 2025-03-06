@@ -42,8 +42,8 @@ const NeumorphismButton = () => {
     const mouseY = e.clientY - rect.top;
 
     // Map mouse coordinates to translation range
-    const tX = (mouseX / width - 0.5) * TRANSLATE_RANGE;
-    const tY = (mouseY / height - 0.5) * TRANSLATE_RANGE;
+    const tX = (mouseX / width - 0.5) * TRANSLATE_RANGE * window.innerWidth;
+    const tY = (mouseY / height - 0.5) * TRANSLATE_RANGE * window.innerHeight;
 
     x.set(tX);
     y.set(tY);
