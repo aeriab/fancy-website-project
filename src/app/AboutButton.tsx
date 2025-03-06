@@ -8,6 +8,13 @@ import {
 } from "framer-motion";
 import Image from 'next/image';
 
+import { Lexend } from 'next/font/google';
+
+const roboto = Lexend({
+  weight: ['500'], // Specify the weights you want to load (optional)
+  subsets: ['latin'],     // Define the character subsets (optional)
+});
+
 const ButtonWrapper = () => {
   return (
     <div className="w-full h-full">
@@ -99,7 +106,7 @@ const NeumorphismButton = () => {
 
           {/* Original Text */}
           <motion.p 
-            className="text-[3vh] absolute z-10 text-[#ffffff] lexend"
+            className={`${roboto.className} font-[500] text-[3vh] absolute z-10 text-[#ffffff]`}
             style={{
               zIndex: 1, // Behind the original text
             }}

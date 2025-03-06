@@ -101,12 +101,12 @@ const NeumorphismButton = () => {
 
           {/* Original Text */}
           <motion.p 
-            className="text-[3vh] absolute z-10 text-[#ffffff] lexend"
+            className="text-[3vh] absolute z-10 text-[#ffffff] font-helvetica"
             style={{
               zIndex: 1, // Behind the original text
             }}
           >
-            HOME
+            HOME HELVETICA
           </motion.p>
 
 

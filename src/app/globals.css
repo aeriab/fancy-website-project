@@ -56,6 +56,16 @@ body {
   }
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-helvetica {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+}
+
 /* // <weight>: Use a value from 100 to 900
 // <uniquifier>: Use a unique and descriptive class name */
 
