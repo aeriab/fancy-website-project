@@ -14,7 +14,7 @@ export function createDots(numDots: number, boxSize: number, dotSize: number): T
   const material = new THREE.MeshBasicMaterial({ color: 0x0e3c64 });
 
   for (let i = 0; i < numDots; i++) {
-      const geometry = new THREE.SphereGeometry(dotSize * (Math.random() + 0.5), 16, 16)
+      const geometry = new THREE.SphereGeometry(dotSize * (Math.random() + 0.1), 16, 16)
       const dot = new THREE.Mesh(geometry, material);
 
       // Random position within the box
@@ -68,7 +68,7 @@ const ThreeDScene: React.FC = () => {
 
     geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 
-    const dots = createDots(800,BOX_SIZE * 2, 0.03);
+    const dots = createDots(800,BOX_SIZE * 2, 0.06);
     scene.add(dots);
 
     // Set initial camera position
@@ -136,8 +136,6 @@ const ThreeDScene: React.FC = () => {
       // } else if (movingUpVal < -0.02) {
       //   movingUpVal = movingUpVal * (1.0 - Math.min(0.99,(5.0 * clock.getDelta())));
       // }
-
-      console.log("movingUpVal: " + String(movingUpVal));
       
       // console.log("movingRightVal: " + String(movingRightVal));
     }
