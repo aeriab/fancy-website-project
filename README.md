@@ -16,6 +16,7 @@ npm install three
 npm install react-icons
 npm install @react-three/fiber three
 npm install tailwindcss-textshadow
+npm install gh-pages --save-dev
 ```
 
 To run the development server:
