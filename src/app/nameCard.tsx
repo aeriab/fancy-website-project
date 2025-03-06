@@ -68,7 +68,7 @@ const NameCard = () => {
         }}
         className="width-full height-full position-absolute top-0 left-0"
         >
-            <div style={{transform: "translateZ(10vh)",transformStyle: "preserve-3d",}}className="big-style rounded-xl bg-[#88d6fa] shadow-lg">
+            <div style={{transform: "translateZ(10vh)",transformStyle: "preserve-3d",paddingLeft: "1vh",paddingTop: "1vh",paddingRight: "1vh",paddingBottom: "1vh"}}className="big-style rounded-xl bg-[#88d6fa] shadow-lg">
                 <div style={{
                         transform: "translateZ(3vh)",
                     }}

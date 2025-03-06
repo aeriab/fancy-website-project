@@ -15,6 +15,7 @@ npm install next@latest react@latest react-dom@latest
 npm install three
 npm install react-icons
 npm install @react-three/fiber three
+npm install tailwindcss-textshadow
 ```
 
 To run the development server:

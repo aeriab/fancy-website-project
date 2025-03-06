@@ -1,3 +1,4 @@
+"use client";
 import type { AppProps } from 'next/app';
 import ThreeDScene from "../../components/ThreeDScene";
 import NameCard from './nameCard';
@@ -25,7 +26,7 @@ export default function Home() {
       </div>
       <div className="absolute top-0 left-0 w-full h-full z-10">
         <div className="p-[3vh] grid grid-cols-[1fr_minmax(200px,_2fr)_1fr] content-normal gap-[0vh] h-[99vh] ...">
-          <div className="big-style h-[var(--custom-top-height)]"><ReloadButton /></div>
+          <div className="big-style h-[var(--custom-top-height)] z-11"><ReloadButton /></div>
           <div className="big-style h-[var(--custom-top-height)] text-white lexend text-[100px]"><NameCard /></div>
           <div className="big-style h-[var(--custom-top-height)]"><AboutButton /></div>
           <div className="big-style h-[var(--custom-middle-height)]"><GamesButton /></div>

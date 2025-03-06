@@ -78,7 +78,7 @@ const NeumorphismButton = () => {
           >
             <img src="/official_profile_picture.svg" alt="Globe Logo" className="w-full h-full"/>
           </motion.div>
-          <p className="text-xl absolute z-10 text-[#ffffff] lexend">PROJECTS</p>
+          <p className="text-[6vh] absolute z-10 text-[#ffffff] [text-shadow:4px_4px_10px_rgba(0,0,0,0.5)] lexend">PROJECTS</p>
         </button>
       </div>
       
