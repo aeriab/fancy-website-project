@@ -106,7 +106,7 @@ const NeumorphismButton = () => {
               zIndex: 1, // Behind the original text
             }}
           >
-            TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+            PROJECTS
           </motion.p>
 
         </button>
