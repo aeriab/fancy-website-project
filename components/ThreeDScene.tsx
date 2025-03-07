@@ -21,7 +21,7 @@ export function createDots(numDots: number, boxSize: number, dotSize: number): T
       dot.position.set(
           (Math.random() - 0.5) * boxSize,
           (Math.random() - 0.5) * boxSize,
-          (Math.random() - 0.1) * boxSize * 0.5
+          (Math.random() - 0.0) * boxSize * 0.5
       );
 
       group.add(dot);
@@ -46,7 +46,7 @@ const ThreeDScene: React.FC = () => {
     const scene = new THREE.Scene();
 
     // Set up camera
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 1, 100);
 
     // Create the renderer
     const renderer = new THREE.WebGLRenderer();
