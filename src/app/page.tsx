@@ -1,4 +1,6 @@
 "use client";
+
+import { RotationProvider } from './rotateContext';
 import ThreeDScene from "../../components/ThreeDScene";
 import NameCard from './nameCard';
 import ReloadButton from './ReloadButton';
@@ -9,8 +11,9 @@ import GamesButton from './GamesButton';
 import Head from 'next/head';
 
 export default function Home() {
+
   return (
-    <>
+    <RotationProvider>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -43,6 +46,6 @@ export default function Home() {
           <div className="big-style h-[var(--custom-bottom-height)]">09</div> */}
         </div>
       </div>
-    </>
+    </RotationProvider>
   );
 }

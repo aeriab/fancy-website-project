@@ -1,4 +1,6 @@
 "use client";
+
+import { useRotation } from './rotateContext';
 import { useRef } from "react";
 import {
   motion,
@@ -28,6 +30,9 @@ const ButtonWrapper = () => {
 const TRANSLATE_RANGE = 150.0;
 
 const NeumorphismButton = () => {
+
+
+  const { toggleRotate } = useRotation();
 
   const ref = useRef<HTMLDivElement | null>(null);
   const x = useMotionValue(0);
@@ -78,7 +83,7 @@ const NeumorphismButton = () => {
           whileHover={{ scale: 1.4 }}
           whileTap={{ scale: 0.95 }} // Slightly shrinks when clicked
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          onClick={() => window.location.href = 'https://aeriab.github.io/about/'} 
+          onClick={toggleRotate} 
           className="flex flex-col items-center justify-center h-[min(17vw,17vh)] w-[min(17vw,17vh)]"
         >
           <motion.div
