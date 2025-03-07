@@ -173,7 +173,7 @@ function Dots() {
   useFrame(() => {
     if (!groupRef.current) return;
 
-    const SPEED_MAX = 0.08;
+    const SPEED_MAX = 0.01;
     const boxSize = 10;
 
     // Update movement values
@@ -237,7 +237,7 @@ const ThreeDScene: React.FC = () => {
       const targetColor = new THREE.Color(0xA8A8FF); // Lighter shade of blue
       const startColor = new THREE.Color(backgroundColor);
 
-      const duration = 1000; // Animation duration in milliseconds
+      const duration = 600; // Animation duration in milliseconds
       let startTime: number | null = null;
 
       const animateColor = (time: number) => {
