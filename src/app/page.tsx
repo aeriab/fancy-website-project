@@ -1,57 +1,3 @@
-// "use client";
-
-// import { RotationProvider } from './rotateContext';
-// import ThreeDScene from "../../components/ThreeDScene";
-// import NameCard from './nameCard';
-// import ReloadButton from './ReloadButton';
-// import ProjectButton from './ProjectButton';
-// import AboutButton from './AboutButton';
-// import BlogButton from './BlogButton';
-// import GamesButton from './GamesButton';
-// import Head from 'next/head';
-
-// export default function Home() {
-
-//   return (
-//     <RotationProvider>
-//       <Head>
-//         <link rel="preconnect" href="https://fonts.googleapis.com" />
-//         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-//         <link
-//           href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-//           rel="stylesheet"
-//         />
-//       </Head>
-//       <div id="threeDContainer" className="absolute top-0 left-0 w-full h-full">
-//         <ThreeDScene />
-//       </div>
-//       <div className="absolute top-0 left-0 w-full h-full z-10">
-//         <div className="p-[3vh] grid grid-cols-[1fr_minmax(200px,_2fr)_1fr] content-normal gap-[0vh] h-[99vh] ...">
-//           <div className="big-style h-[var(--custom-top-height)] z-11"><ReloadButton /></div>
-//           <div className="big-style h-[var(--custom-top-height)] text-white lexend text-[100px]"><NameCard /></div>
-//           <div className="big-style h-[var(--custom-top-height)]"><AboutButton /></div>
-//           <div className="big-style h-[var(--custom-middle-height)]"><GamesButton /></div>
-//           {/* <div id="threeDContainer" className="relative big-style h-[var(--custom-middle-height)]"> */}
-//           <div className="big-style h-[var(--custom-middle-height)]">
-//             {/* <ThreeDScene /> */}
-//             <ProjectButton />
-
-//             {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black text-4xl font-bold font-lexend">
-//               Projects
-//             </div> */}
-//           </div>
-//           <div className="big-style h-[var(--custom-middle-height)]"><BlogButton /></div>
-//           {/* <div className="big-style h-[var(--custom-bottom-height)]">07</div>
-//           <div className="big-style h-[var(--custom-bottom-height)]">08</div>
-//           <div className="big-style h-[var(--custom-bottom-height)]">09</div> */}
-//         </div>
-//       </div>
-//     </RotationProvider>
-//   );
-// }
-
-
-
 "use client";
 
 import { RotationProvider, useRotation } from "./rotateContext";
@@ -64,6 +10,7 @@ import BlogButton from "./BlogButton";
 import GamesButton from "./GamesButton";
 import Head from "next/head";
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 function HomeContent() {
   const { rotate } = useRotation(); // Get state from RotationProvider
@@ -83,12 +30,12 @@ function HomeContent() {
       </div>
       <div className="absolute top-0 left-0 w-full h-full z-10">
         <motion.div
-          className="p-[3vh] grid grid-cols-[1fr_minmax(200px,_2fr)_1fr] content-normal gap-[0vh] h-[99vh]"
-          animate={{ y: rotate ? "-100vh" : 0 }} // Slide elements when rotate is true
+          className="p-[3vh] content-normal gap-[0vh] h-[99vh] grid grid-cols-2 grid-rows-3 sm:grid-cols-3 sm:grid-rows-2"
+          animate={{ y: rotate ? "-150vh" : 0 }} // Slide elements when rotate is true
           transition={{ duration: 0.9, ease: "easeInOut" }}
         >
-          <div className="big-style h-[var(--custom-top-height)] z-11"><ReloadButton /></div>
-          <div className="big-style h-[var(--custom-top-height)] text-white lexend text-[100px]"><NameCard /></div>
+          <div className="big-style h-[var(--custom-top-height)] z-11 col-start-1 col-end-1 row-start-1 row-end-2"></div>
+          <div className="big-style h-[var(--custom-top-height)] text-white lexend text-[100px] col-start-1 col-end-3 row-start-1 row-end-2"><NameCard /></div>
           <div className="big-style h-[var(--custom-top-height)]">
             <AboutButton /> {/* Toggles sliding */}
           </div>
@@ -96,6 +43,31 @@ function HomeContent() {
           <div className="big-style h-[var(--custom-middle-height)]"><ProjectButton /></div>
           <div className="big-style h-[var(--custom-middle-height)]"><BlogButton /></div>
         </motion.div>
+        <motion.div
+          className="absolute top-10 left-10 z-20"
+          animate={{ y: rotate ? 0 : "150vh", opacity: rotate ? 1 : 0 }} // Fade in/out the home button
+          transition={{ duration: 0.9, ease: "easeInOut" }}
+        >
+          <ReloadButton />
+          <h1>UNDER CONSTRUCTION</h1>
+          {/* <Image 
+            unoptimized
+            
+            src="https://aeriab.github.io/under_construction.png"
+            // src="/official_profile_picture.SVG"
+            alt="Under Construction" 
+            className="w-full h-full"
+            width={10} // Specify the width of the image (or use a value based on your layout)
+            height={10} // Specify the height of the image (or use a value based on your layout)
+          /> */}
+        </motion.div>
+        {/* <motion.div
+          className="absolute top-15 left-15 z-20"
+          animate={{ y: rotate ? 0 : "150vh", opacity: rotate ? 1 : 0 }} // Fade in/out the home button
+          transition={{ duration: 0.9, ease: "easeInOut" }}
+        >
+          
+        </motion.div> */}
       </div>
     </>
   );
